@@ -3,15 +3,15 @@ public abstract class Tile {
         WHITE, BLACK;
     }
 
+    protected final int tileCoordinate;
+    protected final color spalva;
+    protected Piece pieceOnTile;
+
     public Tile(int tileCoordinate, color spalva, Piece pieceOnTile){
         this.tileCoordinate = tileCoordinate;
         this.spalva = spalva;
         this.pieceOnTile = pieceOnTile;
     }
-
-    protected final int tileCoordinate;
-    protected final color spalva;
-    protected Piece pieceOnTile;
 
     public abstract Piece getPiece();
 
@@ -26,7 +26,7 @@ public abstract class Tile {
             return null;
         }
     }
-    public class OccupiedTIle extends Tile {
+    public class OccupiedTile extends Tile {
         public OccupiedTIle(int tileCoordinate, color spalva, Piece pieceOnTile) {
             super(tileCoordinate, spalva, pieceOnTile);
         }
